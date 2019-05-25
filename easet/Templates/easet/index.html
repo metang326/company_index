@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<!--引用百度地图API-->
+<style type="text/css">
+    html,body{margin:0;padding:0;}
+    .iw_poi_title {color:#CC5522;font-size:14px;font-weight:bold;overflow:hidden;padding-right:13px;white-space:nowrap}
+    .iw_poi_content {font:12px arial,sans-serif;overflow:visible;padding-top:4px;white-space:-moz-pre-wrap;word-wrap:break-word}
+</style>
+<script type="text/javascript" src="http://api.map.baidu.com/api?key=&v=1.1&services=true"></script>
+
+<meta charset="UTF-8">
+<title>xxx公司|xxx Co.</title>
+
+{% load staticfiles %}
+
+<script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/jquery.easing.min.js' %}"></script>
+
+<script type="text/javascript" src="{% static 'js/jquery.lavalamp.min.js' %}"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}">
+
+<script type="text/javascript" src="{% static 'js/bootstrap.min.js' %}"></script>
+
+<link rel="stylesheet" type="text/css" href="{% static 'css/daohang.css' %}">
+
+    <script type="text/javascript">
+        $(function() {
+            $("#box-lanrenzhijia").lavaLamp({
+                fx: "backout", 
+                speed: 700,
+                click: function(event, menuItem) {
+                    return false;
+                }
+            });
+        });
+
+    </script>
+
+<script type="text/javascript">
+
+ $(document).ready(function(){    
+      $("li#home").click(
+        function(){
+          $.get("../home", function(result){
+            $("div#bodyContent").html(result);
+            }
+          );
+        }
+      );
+
+      $("li#aboutUS").click(
+        function(){
+          $.get("../aboutUS", function(result){
+            $("div#bodyContent").html(result);
+            }
+          );
+        }
+      );
+
+      $("li#business").click(
+        function(){
+          $.get("../business", function(result){
+            $("div#bodyContent").html(result);
+            }
+          );
+        }
+      );
+
+
+     $("li#products").click(
+        function(){
+          $.get("../products", function(result){
+            $("div#bodyContent").html(result);
+            }
+          );
+        }
+      );
+     $("li#job").click(
+        function(){
+          $.get("../job", function(result){
+            $("div#bodyContent").html(result);
+            }
+          );
+        }
+      );
+
+      $("li#contactUS").click(
+        function(){
+          $.get("../contactUS", function(result){
+            $("div#bodyContent").html(result);
+            }
+          );
+        }
+      );
+});
+
+</script>
+
+</head>
+
+
+
+<body>
+<div style="height: 80px;float: uppercase">
+ <div style="float: left;">
+  <ul class="box-lanrenzhijia table" id="box-lanrenzhijia">
+     <li id="home" class="tab-active"><a href="#"><b>网站首页</b></a></li> 
+     <li id="aboutUS"><a href="#"><b>关于我们</b></a></li> 
+     <li id="business"><a href="#"><b>经营业务</b></a></li> 
+     <li id="products"><a href="#"><b>产品展示</b></a></li> 
+   <!--  <li id="job"><a href="#">招贤纳士</a> </li> -->
+     <li id="contactUS"><a href="#"><b>联系我们</b></a></li> 
+  </ul>
+ </div>
+<div style="float: right;"><img src="{%static 'icon.jpg' %}" height="80px" width="240px"></div>
+</div>
+
+
+<div id="bodyContent">
+
+<div style="background: #87CEFA;height: 400px">
+
+  {% load staticfiles %}
+<div style="float: left;">
+<br><br>
+    <h1><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xxx公司</font></h1>
+    <p><font color="white">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;xxx Co.</font></p>
+</div>
+<div style="float: left;">
+<img src="{%static 'earth.png' %}" height="500px" width="600">
+</div>
+</div>
+
+</div>
+
+</body>
+
+</html>
